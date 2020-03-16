@@ -1,0 +1,616 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+    <!--meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" /-->
+    <!--meta http-equiv="Content-Security-Policy" content="default-src *; img-src * 'self' data: https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' *; style-src  'self' 'unsafe-inline' *"-->
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Jiffy</title>
+    <!-- Bootstrap -->
+    <!--<script type="text/javascript" src="cordova.js"></script>--> 
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.theme.default.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/form.css' %}">
+   
+    <link rel="stylesheet" href="{% static 'css/croppie.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" >
+    <link rel="stylesheet" href="{% static 'css/light.css' %}" title="light">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+</head>
+
+<body> <!-- onload="init();" -->
+
+    <!--    <div class="one1">1111</div>
+    <div class="one2">2222</div> -->
+
+    <!--<div class="loader-overlay" id="loader" style="display:block;">
+         <div id="text"><img src="{% static '/img/loading.gif' %}"></div>
+    </div>-->
+    <div id="alert-modal" class="modal fade in" role="dialog" >
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Alert!</h4>
+                </div>
+                <div class="modal-body">
+                    <p></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="btn-ok" class="btn btn-default" data-dismiss="modal">OK</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="overlay"></div>
+    <div class="container-fluid app">
+        <div class="row app-one">
+            <div class="col-sm-12 conversation">
+                <div class="container heading">
+                    <div class="row">
+                    	<div id="optionBack" class="hidden col-sm-2 col-md-1 col-xs-2 light-button-parent">
+                            <button id="optionBackBtn" class="back-button">
+                                <a href="#">
+									<!-- <img src="tools/img/power-button.png">-->
+                                    <i class="fa fa-chevron-left"></i>
+                                </a>
+                            </button>
+                        </div>
+                        <div class="col-sm-2 col-md-2 col-xs-3 heading-avatar">
+                            <div class="heading-avatar-icon">
+                                <img class="jiffy-iconreceiver-logo" alt="" src="">
+                            </div>
+                        </div>
+			<div class="col-md-5 hidden-sm hidden-xs text-center">
+                        	<span id="jiffy-coke-title">Global Market Share Report</span> <!-- class="pull-right" -->
+                        </div>
+                        <div id="jiffy-logo-wrapper" class="col-sm-2 col-md-2 col-xs-3"> <!--  col-md-offset-1 col-sm-offset-2 text-center-->
+                            <div class="jiffy-logo">
+                                <!--   <img src="tools/img/powerbyjiffy.png" alt="" class="img-responsive powerby-head-img img-mid"> -->
+                            </div>
+                        </div>
+                        <div id="exportToPPT" class="col-sm-2 col-md-1 col-xs-2 text-center"> <!-- jiffy-ppt -->
+                             <a class="jiffy-glyph" href="#" data-toggle="tooltip" data-placement="bottom" title="Export Charts to PPT">
+                                <img src="{% static 'img/powerpoint.svg' %}" width="40px"
+                                <i class="fa fa-download"></i>
+                            </a>
+                        </div>
+                        <div class="col-sm-2 col-md-1 col-xs-2 padd-icon">
+                            <img src="{% static 'img/defaultDP.png' %}" alt="" class="img-responsive info-profile img-mid" id="hpic"> <!-- "tools/img/receive.png" -->
+                            <img class="jiffy-iconedit edit-style" alt="" src="	data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAATAQMAAABInqSPAAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAAAxJREFUeNpjYKAeAAAATAABcJLbwAAAAABJRU5ErkJggg==" >
+                        </div>
+                        <!--<div id="signOutChat" class="hidden col-sm-2 col-md-1 col-xs-2 text-center signOut"> 
+                             <a class="jiffy-glyph" href="">
+                                <!--img src="tools/img/powerpoint.svg" width="40px"
+                                <i class="fa fa-power-off"></i>
+                            </a>
+                        </div>-->
+                        <div class="col-sm-6 col-md-2 col-xs-6 light-button-parent">
+                            <button id="signOut" class="light-button">
+                                <a href="#"-->
+									 <img src="{% static 'img/powerbutton.png' %}">-->
+                                    <i class="fa fa-power-off" aria-hidden="true"></i>
+                                </a>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="message">
+                    <div class="container">
+                        <div class="row" id="conversation"> <!--class="message"-->
+                        	 <div class="processAlert alert alert-info hidden" style="">
+							    You are currently using data from <strong id="process_name"></strong> Analysis.
+							  </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="reply">
+                    <form>
+                        <div class="container">
+                            <div class="row chat-input-panel">
+                                <div class="col-sm-1 col-xs-2 mylink">
+								<!-- admin-dashboard -->
+                                    <a href="#" id="quickaccess"></a>
+                                    <div class="popup-container">
+                                        <div class="mypopup">
+                                            <div class="mytext" id="div-questions">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-7 col-xs-7 reply-main">
+                                    <div class="comment-parent">
+                                        <input type="text" class="form-control" id="comment" placeholder="Type your message" required="">
+                                        <span id="characterSpan" style="visibility: hidden;"></span> 
+                                    </div>
+                                </div>
+                                
+                                <div class="col-sm-2 col-xs-3 send-input-panel"> <!-- reply-send -->
+                                    <button type = "submit" class="reply-send-btn jiffy-iconsend center-block" src="{% static 'img/foooter-arrow.png' %}" > 
+                                    <img src="{% static 'img/foooter-arrow.png' %}" class="img-responsive">
+                                    </button>
+                                </div>
+                                <div class="col-sm-2 col-xs-12 reply-product hidden-xs">
+                                    <div class="jiffy-logo-2">
+                                        <!--img class="jiffy-iconproductby" alt="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMwAAAAcAQMAAAAX0sKeAAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAAA9JREFUeNpjYBgFo2BkAQAC9AABPqdv5QAAAABJRU5ErkJggg=="--> 
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="side-navbar-custom">
+                    <button type="button" class="test-close1"><img src="img/cross-1.png}" alt="" class="img-responsive image_modal"></button>
+                    <a href="javascript:void(0);" id="left-sidebar" class="left-sidebar"><i class="fa fa-angle-right rght"></i></a>
+                    <div class="side-nav-wrapper">
+                        <div class="slider-two">
+                            <img class="jiffy-icontips img-mid" alt="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACoAAAAqAQMAAAD/DVsYAAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAAA1JREFUeNpjYBgFhAEAASYAARfcVj8AAAAASUVORK5CYII=">
+                            <h3 id="glossary_tips" class="text-center slider-two-head">Tips & Glossary</h3>
+                            
+                            <div class="owl-carousel owl-two owl-theme" id="div-tips">
+                            </div>
+                            <!-- <marquee align="middle" class="text-center" id="div-tips" behavior="scroll" direction="up" height="90px" scrolldelay="3000" scrollamount="90" >
+                            </marquee> -->
+
+                            
+                        </div>
+                        <div class="slider-one">
+                            <img class="jiffy-iconquest-icon img-mid" alt="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACoAAAAqAQMAAAD/DVsYAAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAAA1JREFUeNpjYBgFhAEAASYAARfcVj8AAAAASUVORK5CYII=">
+                            <h3 class="text-center slider-one-head">Questions</h3>
+                            
+                            <div class="owl-carousel owl-one owl-theme" id="div-sb-questions">
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="right-side-info-custom">
+                    <button type="button" class="test-close"> <img src="img/cross-1.png" alt="" class="img-responsive image_modal"></button>
+                    
+                    <div class="tab-content">
+                        <div>
+                            <div class="accordian-custom">
+                                <div class="panel-wrapper">
+                                    <div class="panel-head minus first-tab">
+                                        <span>My Profile</span>
+                                    </div>
+                                    <div class="panel-content panel-show" style="display: block;">
+                                        <img src="img/profile-dp.png" alt="" class="img-responsive img-mid profile-dp-img" id="mpic">
+                                        <img src="img/camera.png" alt="" class="img-responsive img-mid camera-img">
+                                        <div class="name-city-profile">
+                                            <h3 class="profile-name"></h3>
+                                            <!--<h5 class="profile-city">Mumbai, India</h5>-->
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel-wrapper">
+                                    <div class="panel-head" id="updpanel">
+                                        <span>Update Profile</span>
+                                    </div>
+                                    <div class="panel-content" style="margin-top:20px;">
+                                        <form class="signin-form" id="formupdateprofile" name ="formupdateprofile"  method="post">
+                                            <div class="group">
+                                                <input maxlength="50" type="text" name="nickname" id="nickname" data-msg-required="Please enter your nickname."  error="Please enter your nickname.">
+                                                <span class="highlight"></span>
+                                                <span class="bar"></span>
+                                                <label>Nickname</label>
+                                                <div class="error"></div>
+                                                <!-- <img src="tools/img/user.png" alt="" class="user-icon"> -->
+                                            </div>
+                                            <div class="group">
+                                                <input  type="text" name="mobile" id="mobile" maxlength="15"  error="Please enter your telephone no.">
+                                                <span class="highlight"></span>
+                                                <span class="bar"></span>
+                                                <label>Tel</label>
+                                                <div class="error"></div>
+                                                <!--  <img src="tools/img/lock.png" alt="" class="lock-icon"> -->
+                                            </div>
+                                            <!--div class="group">
+                                                <input maxlength="50" type="text" name="language" id="language"  error="Please enter your language.">
+                                                <span class="highlight"></span>
+                                                <span class="bar"></span>
+                                                <label>Language</label>
+                                                <div class="error"></div>
+                                                <! <img src="tools/img/lock.png" alt="" class="lock-icon"> ->
+                                            </div-->
+                                            <div class="group">
+                                                <input maxlength="100" type="text" name="company" id="company"  error="Please enter your company name.">
+                                                <span class="highlight"></span>
+                                                <span class="bar"></span>
+                                                <label>Company</label>
+                                                <div class="error"></div>
+                                                <!-- <img src="tools/img/lock.png" alt="" class="lock-icon"> -->
+                                            </div>
+                                            <div class="group" id="msg"></div>
+                                            <div class="text-center">
+                                                <button class="btn btn-default signin-btn" type="submit" id="updateprofile"><span>Submit</span></button>
+                                            </div>
+                                            
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="panel-wrapper">
+                                    <div class="panel-head">
+                                        <span>Change Password</span>
+                                    </div>
+                                    <div class="panel-content">
+                                        <div role="tabpanel" class="tab-pane" id="Password">
+                                            <form class="signin-form" id="form-change-pass">
+                                                <div class="group">
+                                                    <input readonly type="email" name="email" data-msg-required=" Please enter your Email"  id="cpemail">
+                                                   <!-- <span class="highlight"></span>
+                                                    <span class="bar"></span>
+                                                    <label>Email</label>
+                                                    <img src="tools/img/user.png" alt="" class="user-icon">-->
+                                                </div>
+                                                <div class="group">
+                                                    <input maxlength="20" type="password" name="npassword" id="npassword" error="Please enter password.">
+                                                    <span class="highlight"></span>
+                                                    <span class="bar"></span>
+                                                    <label>New Password</label>
+                                                    <img src="img/lock.png" alt="" class="lock-icon">
+                                                    <div class="error"></div>
+                                                </div>
+                                                <div class="group">
+                                                    <input maxlength="20" type="password" name="cpassword" id="cpassword" error="Please retype password.">
+                                                    <span class="highlight"></span>
+                                                    <span class="bar"></span>
+                                                    <label>Confirm New Password</label>
+                                                    <img src="img/lock.png" alt="" class="lock-icon">
+                                                    <div class="error"></div>
+                                                </div>
+                                                <p id="pmsg"></p>
+                                                <div class="text-center">
+                                                    <button class="btn btn-default signin-btn" type="submit"><span>Submit</span></button>
+                                                </div>
+                                            </form>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel-wrapper">
+                                    <div class="panel-head">
+                                        <span>Select Themes</span>
+                                    </div>
+                                    <div class="panel-content">
+                                        <div role="tabpanel" class="tab-pane" id="Theme">
+                                            <form name="music" method="post" action="" class="theme">
+                                                <!-- <h4 class="text-center form-head-side">Please Select the Theme</h4> -->
+                                                <div class="combined-radio">
+                                                    <input type="radio" name="optradio" class="light" id="light" value="light" checked>
+                                                    <label for="light" class="radio-inline">Lighter Theme</label>
+                                                </div>
+                                                <div class="combined-radio">
+                                                    <input type="radio" name="optradio" id="dark" value="dark" class="dark">
+                                                    <label for="dark" class="radio-inline">Darker Theme</label>
+                                                </div>
+                                            </form>
+                                            <!--<form class="theme-upload-form">
+                                                <input type="file" name="theme">
+                                                <label>Upload Theme</label>
+                                            </form>-->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        
+        
+        <div class="hidden">
+		    <div id="message_template_sender">
+		    <div class="row message-body">
+		      <div class="col-sm-12 message-main-sender">
+		        <!--<img height="45" width="45" class="hidden-xs jiffy-iconsender-icon pull-right" alt="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyAQMAAAAk8RryAAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAAA5JREFUeNpjYBgFgwkAAAGQAAHO016IAAAAAElFTkSuQmCC">-->
+		        <img height="45" width="45" class="hidden-xs jiffy-iconsender-icon pull-right" alt="" src="{% static 'img/smiley.png' %}">
+		        <div class="sender">
+		          <div id="text_place" class="message-text-sender"></div>
+		          <span class="message-time-sender pull-right"></span>
+		        </div>
+		      </div>
+		     </div>
+		    </div>
+		    
+		    <div id="message_template_receiver_text">
+                        <div class="row message-body">
+                            <div class="col-sm-12 message-main-receiver">
+                                <img src="{% static 'img/receiver-icon.png' %}" alt="" class="hidden-xs jiffy-icon-pop">
+                                <div class="receiver">		          
+                                    <div id="text_place" class="message-text-receiver"></div>
+                                    <span class="message-time-receiver pull-right"></span>
+                                </div>
+                            </div>
+                        </div>
+		    </div>
+			
+			<div id="message_template_receiver">
+				<div class="row message-body">
+		      <div class="col-sm-12 message-main-receiver">
+		        <img src="img/receiver-icon.png" alt="" class="hidden-xs jiffy-icon-pop">
+		        <div id="map_receiver" class="receiver"> <!-- style="width: 90%;" -->     
+		          <div class="message-text-receiver">
+				<div class="excel-wrapper">
+					<a href="#" data-toggle="tooltip" title="Export chart data to excel"><i id="excel_export" class="fa fa-bars fa-2x exportToExcel" aria-hidden="true"></i></a>
+				</div>
+		          	<div class="wrapper_div hidden"> <!-- style="position: relative; width: 60vw; height: 40vh" -->
+                                    <!--<canvas id="plotSpacetree"></canvas>-->
+                                    <canvas class="plotSpace"></canvas>
+                                </div>
+                                <div class="like-wrapper">
+                                    <!--p id="text_place"></p-->
+                                    <div id="inference"></div>
+                                    <br>
+                                    <div style="font-size: 0.7em; font-style: italic; line-height: 12px;" id="caption"></div>
+                                    <a id="like_buttons">
+                                        <i id="like_btn" class=" fa fa-thumbs-up fa-2x jiffy_like" aria-hidden="true"></i>
+                                        <i id="dislike_btn" class="fa fa-thumbs-down fa-2x jiffy_dislike" aria-hidden="true"></i>
+                                    </a>
+                                </div>
+                            </div>
+		          <span class="message-time-receiver pull-right"></span>
+		        </div>
+		      </div>
+		     </div>
+		    </div>
+		    <div id="mapCharts"></div>
+	    </div>
+
+        <button type="button" class="btn btn-info btn-lg modal-1" data-toggle="modal" data-target="#imagecrop">Open Modal</button>
+
+        <div class="modal fade" id="imagecrop" role="dialog">
+            <div class="modal-dialog" style="top:50vh !important;">
+                <!-- Modal content-->
+                <div class="modal-content">
+
+                    
+                    <div class="modal-body">
+                    	<img src="img/cross-1.png" alt="" id="imagecrop-close" class="img-responsive image_modal  pull-right" />
+                        <form id="form1" runat="server">
+                            <input type='file' id="upload" />
+                        </form>
+
+                        <div id="upload-demo"></div>
+
+                        <button class="upload-result">Result</button>
+                        <img src="img/no-image.png" class="result">
+                        <p></p>
+                        <button class="upload-result" id="saveimg">Save</button>
+                        <p></p>
+                        <p id="msgpic"></p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        
+        <div id="scrollUp" title="false" style="position: fixed;overflow: hidden; bottom: 65px; right: 20px; z-index: 3;"></div>
+        <div id="scrollDown" title="false" style="position: fixed;overflow: hidden; bottom: 65px; right: 20px; z-index: 3;"></div>
+
+        <div id="confirm-modal" class="modal fade in" role="dialog" >
+            <div class="modal-dialog">
+
+                
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Please Confirm</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" id="btn-yes" class="btn btn-default" data-dismiss="modal">Yes</button>
+                        <button type="button" id="btn-no" class="btn btn-default" data-dismiss="modal">No</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        
+         <div id="dislike-modal" class="modal fade in" role="dialog" >
+         	<span class="hidden" id="quesDiv"></span>
+            <div class="modal-dialog">
+
+                
+                <div class="modal-content">                	
+                    <div class="modal-header">
+                    	<img src="img/cross-1.png" alt="" id="dislikeFB_modal-close" class="img-responsive pull-right" />
+                        <h4 class="modal-title">Inference Suggestion Window</h4>                        
+                    </div>
+                    <div class="modal-body">                       
+                    	<p>Please provide an alternate inference and help me learn!</p> 
+                    	<p>The current inference : <b><span id="dislikedInference"></span></b></p>						
+						<textarea placeholder="Type in the inference you would've liked to see..." class="form-control" rows="5" id="dislikeFeedback"></textarea>
+						<p style="margin-top: 15px;" id="noTextAlert" class="alert alert-danger alert-dismissible" role="alert">
+						  <strong>Uh oh!</strong> Looks like you have not entered an alternative. If you do not want to, then please click on cancel. 
+						</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" id="btn-confirm" class="btn btn-primary" data-dismiss="modal">Confirm</button>
+                        <button type="button" id="btn-cancel" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+	    <div id="feedback-modal" class="modal fade in" role="dialog" >
+         	<div class="modal-dialog">
+                <!-- Modal content -->
+                <div class="modal-content">                	
+                    <div class="modal-header">
+                    	<!--img src="tools/img/cross-1.png" alt="" id="feedback_modal-close" class="img-responsive pull-right" /-->
+                        <h4 class="modal-title">Feedback</h4>                        
+                    </div>
+                    <div class="modal-body">     
+                    	<p class="text-center">Please provide your feedback and help me learn!</p>   
+                    	             
+                    	<div class="row">
+						    <div class="col-lg-12">
+						      <div class="star-rating text-center">
+						        <span class="fa fa-star-o" data-rating="1"></span>
+						        <span class="fa fa-star-o" data-rating="2"></span>
+						        <span class="fa fa-star-o" data-rating="3"></span>
+						        <span class="fa fa-star-o" data-rating="4"></span>
+						        <span class="fa fa-star-o" data-rating="5"></span>
+						        <input id="ratingValue" type="hidden" name="whatever1" class="rating-value" value="0">
+						      </div>
+						    </div>
+						  </div>
+						  <br>
+						<textarea placeholder="Please help me improve your experience..." class="form-control" rows="5" id="userFeedbackText"></textarea>
+                    	<p style="margin-top: 15px;" id="noFeedbackTextAlert" class="alert alert-danger alert-dismissible" role="alert">
+						  <strong>Uh oh!</strong> Looks like you have not entered a rating. Please enter a rating to help us improve your experience with Jiffy. 
+						</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" id="btn-confirm" class="btn btn-primary" data-dismiss="modal">Confirm</button>
+                        
+                    </div>
+                </div>
+
+            </div>
+        </div>
+	          <div id="help-modal" class="modal fade in" role="dialog">
+         	<div class="modal-dialog">
+                <!-- Modal content -->
+                <div class="modal-content">                	
+                    <div class="modal-header">
+                    	<!--img src="tools/img/cross-1.png" alt="" id="feedback_modal-close" class="img-responsive pull-right" /-->
+                        <h4 class="modal-title">Glossary & Help Page</h4>                        
+                    </div>
+                                        <div class="modal-body"> 
+                    	<fieldset>
+  						<legend style="font-weight:bold;">Glossary</legend>    
+                    	<!--p class="text-center">Please provide your feedback and help me learn!</p-->
+                    	<div class="row">
+						   	<ul>
+							   	<p class="glossary_title">Market Scope</p>
+							   	<li>World(Top 32) is the aggregation of Argentina, Australia, Brazil, Canada, Chile, China, 
+							   		Colombia, Ecuador, Egypt, France, Germany, Great Britain, India, Indonesia, Italy, Japan, 
+							   		Mexico, Morocco, Nigeria, Pakistan, Peru, Philippines, Poland, Romania, Russian Federation, 
+							   		South Africa, South Korea, Spain, Thailand, Turkey, United States & Vietnam</li>
+							   	<li>EMEA(Top 40) OG is the aggregation of Algeria, Belgium, Egypt, France, Germany, 
+							   		Great Britain, Italy, Morocco, Netherlands, Nigeria, Pakistan, Poland, Romania,
+							   		Russian Federation, Saudi Arabia, South Africa, Spain & Turkey</li>
+							   	<li>ASEAN BU is the aggregation of Indonesia, Philippines, Thailand & Vietnam</li>
+							   	<li>CEE BU is the aggregation of Italy, Poland, Romania & Russian Federation</li>
+							   	<li>Mexico BU consists of Mexico</li>
+							   	<li>USA BU consists of USA</li>	
+							   	<p><sub><i>*OG- Operating Group, BU- Business Unit</i></sub></p>
+						   	</ul>
+						</div>
+									
+						<div class="row">
+						   <ul>
+						   	<p class="glossary_title">Time-Period</p>
+							   	<p>Data shown from Sep 2016 - Aug 2018 in Jiffy</p>
+							   	<b style="color:#c00000">YTD</b><b> (Year-To-Date e.g. YTD Feb would be the cumulative sum of Jan & Feb month)</b>
+							   	<!--p><b>Scope</b></p-->
+							   	<ul style="padding-left:20px">
+							   	    <li>Can ask Jiffy for Share % & Mix % starting from Jan 2017.</li>
+								    <li>Growth % & Share Change can be viewed from Jan 2018 - Aug 2018 (8 periods only)</li>
+								</ul>
+								<b style="color:#c00000">MTD</b><b> (Month-To-Date i.e. Current Month)</b>
+								<!--p><b>Scope</b></p-->
+								<ul style="padding-left:20px">
+							   		<li>Growth % & Share Change can be viewed from Sep 2017 to Aug 2018 (12 Periods)</li>
+								    <li>Share % & Mix % can be viewed for 24 months.</li>
+								</ul>
+						   </ul> 
+						</div>
+						<div class="row">
+						   	<ul>
+							   	<p class="glossary_title">Beverage Category Definition</p>
+							   	<li>NARTD = Sum of SSD, Energy Drinks, Juices, VAD, PBB, Waters, Sports Drinks, RTD Tea & RTD Coffee</li>
+							   	<li>SSD = Sparkling Soft Drinks or also called as CSD or CSp</li>	
+							   	<li>Waters = Sum of Plain Packaged Water, Flavored Water & Enhanced Water Beverages. Excludes Bulk (10L & above) & Pouch Water</li>	
+						   	</ul>
+						</div>
+						</fieldset>
+						<fieldset>
+  						<legend style="font-weight:bold;">Help</legend>
+						<div class="row">
+						   	<ul>
+								<p class="glossary_title">Question Format</p>
+								<li>KPI(Mandatory) + Dimensions + Time-Period.</li>	
+						   	</ul>
+						</div>
+						<div class="row">
+						   	<ul>
+								<p class="glossary_title">Best to try with</p>
+								<li>Best to try with any KPI, Manufacturer or Time-Period</li>
+						   	</ul>
+						</div>
+						<div class="row">
+						   	<ul>
+								<p class="glossary_title">Dimensions</p>
+								<li>You can also have single or all categories as part of your question</li>
+								<li>You can dynamically reduce the bar in chart by cancelling out the bar legends. 
+									This will help in viewing the cluttered chart.</li>							
+						   	</ul>
+						</div>
+						<div class="row">
+						   	<ul>
+								<p class="glossary_title">KPI</p>
+								<li>Always remember to mention the KPI, it is mandatory</li>							
+						   	</ul>
+						</div>
+						<div class="row">
+						   	<ul>
+								<p class="glossary_title">Chart type</p>
+								<li>You can also mention the type of chart you would prefer, and if possible, 
+									the response will be generated using the same. (bar = Vertical bar chart, barh = Horizontal bar chart or line chart)</li>														
+						   	</ul>
+						</div>
+						<div class="row">
+						   	<ul>
+								<p class="glossary_title">Time-Period with KPI</p>
+								<li>KPI should match with time-period e.g. YTD value growth won&#39;t give answer if asked in 2017</li>
+								<li>User can ask question with time-period using specific months or trend or last year or current year or between the months</li>
+						   	</ul>
+						</div>
+					</fieldset>
+					</div>
+                    <div class="modal-footer">
+                        <button type="button" id="btn-ok" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="{% static 'js/jquery.min.js' %}"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="{% static 'js/bootstrap.min.js' %}"></script>
+		<script src="{% static 'js/controller.js' %}"></script>
+        <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+        <script src="{% static 'js/jquery-ui.min.js' %}"></script>
+        <!--<script src="{% static 'js/croppie.js' %}"></script>-->		
+        <!--<script type="text/javascript" src="public/js/gstatic_loader.js"></script>-->
+</body>
+
+</html>

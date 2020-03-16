@@ -1,0 +1,437 @@
+.heading {
+    width: 100%;
+    padding: 10px 16px 10px 15px;
+    margin: 0;
+    height: 60px;
+    background-color: #000000;
+    z-index: 1000;
+}
+
+.reply {
+    height: 60px;
+    width: 100%;
+    background-color: #000000;
+    padding: 10px 5px 10px 5px !important;
+    margin: 0 !important;
+    z-index: 4;
+    position: fixed;
+    bottom: 0;
+}
+
+.right-side-info-custom {
+    width: 350px;
+    background: #15151d;
+    position: absolute;
+    top: 60px;
+    right: -350px;
+    height: calc(100vh - 60px);
+   
+/*height: : -webkit-calc(100vh - 60px);
+height: : -moz-calc(100vh - 60px);
+height: : calc(100vh - 60px);*/
+    z-index: 6;
+    -webkit-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    transition: all 1s ease;
+    overflow: scroll;
+}
+
+.adjustable-info {
+    right: 0;
+}
+
+.side-navbar-custom {
+    background: #fff;
+}
+
+.slider-two-text {
+    font-family: "Montserrat-Regular";
+    font-size: 12px;
+    padding: 0px 30px;
+    border-bottom: 1px solid #f2f2f2;
+}
+
+.mypopup {
+    position: absolute;
+    bottom: 0px;
+    left: 50px;
+    background-color: #15151d;
+    width: 400px;
+    border-bottom-right-radius: 30px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+}
+
+.conversation {
+    background: url("../img/bg-1.jpg") no-repeat fixed center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 0 !important;
+    margin: 0 !important;
+    height: 100%;
+    border-left: 1px solid rgba(0, 0, 0, .08);
+}
+
+.profile-city {
+    color: #fff;
+}
+
+.panel-wrapper .panel-head {
+    color: #fff;
+    background-color: #15151d;
+    border-color: #ddd;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+.minus.first-tab {
+    background-color: transparent;
+    color: #15151d;
+}
+
+button.close-pop1 {
+    border: 0;
+    /* width: 30px; */
+    /* height: 30px; */
+    right: -16px;
+    position: absolute;
+    background-color: transparent;
+    color: #fff;
+    font-size: 18px;
+    z-index: 1;
+    top: 40%;
+    border-radius: 20px;
+}
+
+.name-city-profile {
+    border-bottom: 0px solid #2d2d35;
+}
+
+.panel-wrapper {
+    margin: 5px 0 0 0;
+    border-bottom: 1px solid #2d2d35;
+}
+
+.side-navbar-custom {
+    background: #15151d;
+}
+
+.slider-one {
+    margin-top: 40px;
+    text-align: center;
+    color: #fff;
+}
+
+.slider-two {
+    margin-top: 40px;
+    text-align: center;
+    color: #fff;
+}
+
+#comment {
+    border-bottom: 1px solid #616263;
+    background: transparent;
+    color: white;
+}
+
+.reply-recording i {
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.mytext h5 a {
+    font-family: "Montserrat-Light";
+    color: #fff;
+    text-decoration: none;
+}
+
+.jiffy-logo {
+    background: url(../img/dark-theme-logo.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right;
+    height: 45px;
+    border-left: 0px solid rgba(0, 0, 0, .08);
+}
+
+.jiffy-logo-1 {
+    background: url(../img/dark-ppt-icon.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 39px;
+    border-left: 0px solid rgba(0, 0, 0, .08);
+}
+
+.jiffy-logo-2 {
+    background: url(../img/dark-theme-footer-logo.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 21px;
+    border-left: 0px solid rgba(0, 0, 0, .08);
+}
+
+#animation_container {
+    background-color: transparent;
+    height: 100vh;
+}
+
+#animation_container #canvas {
+    position: absolute;
+    display: block;
+    background-color: transparent;
+    width: 100% !important;
+}
+
+#dom_overlay_container {
+    pointer-events: none;
+    overflow: hidden;
+    width: 100% !important;
+    ;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    display: block;
+}
+
+.combined-radio .radio-inline {
+    float: left;
+    top: 0;
+    padding: 0;
+    color: #fff;
+}
+
+.signin-form .group input {
+    width: 100%;
+    background: transparent;
+    color: #fff;
+}
+
+input:focus ~ label,
+input:valid ~ label {
+    top: -20px;
+    font-size: 14px;
+    color: #999;
+}
+
+.prev23 {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    text-align: center;
+    left: -103px;
+    position: relative;
+    top: -72px;
+}
+
+.next23 {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    text-align: center;
+    position: relative;
+    right: -102px;
+    top: -74px;
+}
+
+.test-close {
+    background: transparent;
+    color: #000;
+    border: none;
+    border-radius: 48%;
+/*
+    width: 33px;
+    height: 33px;
+*/
+    margin-left: 0%;
+        padding: 1%;
+}
+
+.test-close2 {
+    background: transparent;
+    color: #000;
+    border: none;
+    border-radius: 48%;
+/*
+    width: 33px;
+    height: 33px;
+*/
+    margin-left: 1%;
+    position: absolute;
+    right: 0;
+}
+
+button.light-button {
+/*
+    background: transparent;
+    border: none;
+    padding: 0;
+*/
+}
+
+
+@media only screen and (max-width: 1200px) and (min-width: 992px) {
+
+    button.close-pop1 {
+        right: 10px;
+    }
+    .message-body {
+        margin: 25px 0 0 0 !important;
+        padding: 0 !important;
+        width: auto;
+        height: auto;
+    }
+    .test-close2 {
+        display: none !important;
+    }
+    .test-close {
+        width: 100%;
+        border-radius: 0%;
+    }
+}
+
+@media only screen and (max-width: 991px) and (min-width: 768px) {
+
+    .jiffy-iconsend {
+        width: 38px;
+        height: 36px;
+        padding: 0;
+        border-radius: 0%;
+        background-position: 0 69.151671%;
+        background-size: 536.842105%;
+    }
+
+    .bottom_border {
+        margin-left: 7%;
+        width: 80%;
+    }
+    .ui-widget.ui-widget-content {
+        left: 77px !important;
+        width: 672.5px;
+        bottom: 61px !important;
+        top: initial !important;
+    }
+    button.close-pop1 {
+        right: 8px;
+    }
+    .message-body {
+        margin: 25px 0 0 0 !important;
+        padding: 0 !important;
+        width: auto;
+        height: auto;
+    }
+    .test-close2 {
+        display: none;
+    }
+    .test-close {
+        width: 100%;
+        border-radius: 0%;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    /*button.close {
+    background: #000;
+    border: 0;
+    width: 30px;
+    height: 30px;
+    border-radius: 18px;
+    margin-top: -11px;
+    margin-right: -7px;
+    margin-bottom: 7px;
+}*/
+    .light-button img {
+        width: 36px !important;
+    }
+    .prev23 {
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        border-radius: 50%;
+        border: 1px solid #fff;
+        text-align: center;
+        left: -114px;
+        position: relative;
+        top: -72px;
+    }
+    .next23 {
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        border-radius: 50%;
+        border: 1px solid #fff;
+        text-align: center;
+        position: relative;
+        right: -119px;
+        top: -72px;
+    }
+    .ui-autocomplete {
+        overflow: auto;
+        height: 85px;
+        padding: 4px;
+        width: 280px !important;
+    }
+    #comment {
+        border-bottom: 1px solid #616263;
+        background: transparent;
+        color: #fff;
+    }
+    .mypopup {
+        position: absolute;
+        bottom: 0px;
+        left: 17px;
+
+        width: 82%;
+        border-bottom-right-radius: 30px;
+        border-top-left-radius: 30px;
+        border-top-right-radius: 30px;
+    }
+    .signin-form .group input {
+        width: 100%;
+        background: transparent;
+        color: #fff;
+    }
+    .bottom_border {
+
+        color: #fff;
+    }
+    .message-body {
+        margin: 25px 0 0 0 !important;
+        padding: 0 !important;
+        width: auto;
+        height: auto;
+    }
+    button.close-pop1 {
+        right: 11px;
+    }
+    .side-navbar-custom {
+
+        z-index: 999;
+        width: 101%;
+        left: -101%;
+    }
+
+
+
+    .right-side-info-custom {
+
+        z-index: 999;
+        width: 100%;
+        right: -100%;
+    }
+    .adjustable-info {
+        right: 0;
+    }
+}
+
+@media screen and (min-width: 1300px) {
+    .test-close2 {
+        display: none !important;
+    }
+}

@@ -1,0 +1,179 @@
+body, html {
+  height:100%;
+}
+
+body {
+    /*padding-top: 70px;*/
+   background-color: #EAEAEA;/*#e5e3e3;*/
+   font-family: Roboto,sans-serif;
+}
+
+/* workaround modal-open padding issue */
+body.modal-open {
+    padding-right:0 !important;
+}
+
+.table { 
+	margin-top: 0px; 
+	margin-bottom: 0px;	
+	font-size: 14px;/*11.90px;*/ 	
+}
+.table thead {
+	text-transform: uppercase;
+}
+.table tbody tr td{
+	padding: 6px;
+}
+
+.card-title{
+	font-size: 17px;
+	text-transform: uppercase;
+	text-align: center;
+}
+#sidebar {
+   padding-left:0;
+}
+
+/*
+ * Off Canvas at medium breakpoint
+ * --------------------------------------------------
+ */
+@media screen and (max-width: 48em) {
+
+  .row-offcanvas {
+    position: relative;
+    -webkit-transition: all 0.25s ease-out;
+    -moz-transition: all 0.25s ease-out;
+    transition: all 0.25s ease-out;
+  }
+
+  .row-offcanvas-left
+  .sidebar-offcanvas {
+    left: -33%;
+  }
+
+  .row-offcanvas-left.active {
+    left: 33%;
+    margin-left: -6px;
+  }
+
+  .sidebar-offcanvas {
+    position: absolute;
+    top: 0;
+    width: 33%;
+    height: 100%;
+  }
+}
+
+/*
+ * Off Canvas wider at sm breakpoint
+ * --------------------------------------------------
+ */
+@media screen and (max-width: 34em) {
+  .row-offcanvas-left
+  .sidebar-offcanvas {
+    left: -45%;
+  }
+
+  .row-offcanvas-left.active {
+    left: 45%;
+    margin-left: -6px;
+  }
+  
+  .sidebar-offcanvas {
+    width: 45%;
+  }
+}
+
+.card {
+    overflow:hidden;
+}
+
+.card-block {
+	padding: 5px;
+}
+
+.card-block .rotate {
+    z-index: 8;
+    float: right;
+    height: 100%;
+}
+
+.card-block .rotate i {
+    color: rgba(20, 20, 20, 0.15);
+    position: absolute;
+    left: 0;
+    left: auto;
+    right: -10px;
+    bottom: 0;
+    display: block;
+    -webkit-transform: rotate(-44deg);
+    -moz-transform: rotate(-44deg);
+    -o-transform: rotate(-44deg);
+    -ms-transform: rotate(-44deg);
+    transform: rotate(-44deg);
+}
+
+/*==================================================
+ * Effect 1
+ * ===============================================*/
+.effect1{
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.effect2{
+	-webkit-box-shadow: 0 10px 6px -6px #777;
+	-moz-box-shadow: 0 10px 6px -6px #777;
+	 box-shadow: 0 10px 6px -6px #777;
+}
+
+#freqChatCanvas {
+  border: 1px dotted red;
+}
+
+.chart-container {
+  position: relative;
+  margin: auto;
+}
+
+.logout-btn {
+    background-color: #de2e2a;
+    border: none;
+    border-radius: 50%;
+    margin-top: 6px;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+}
+
+.light-button :focus,
+.light-button :active,
+.light-button {
+    outline: 0 !important;
+}
+
+.light-button-parent {
+    max-width: 60px;
+    max-height: 60px;
+}
+
+button.light-button {
+    width: 30px;
+    height: 30px;
+    background: #de2e2a;
+    border-radius: 50%;
+    text-align: center;
+    border: 0;
+    padding: 0;
+    margin-top: 7px;
+}
+
+.light-button:hover {
+    color: #fff;
+    background-color: #04102a;
+}
+
+/* button.light-button i {
+    color: white;
+} */
